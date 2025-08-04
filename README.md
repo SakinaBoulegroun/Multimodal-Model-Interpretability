@@ -38,9 +38,10 @@ This project focuses on training and interpreting multimodal classifiers that co
 ## Installation
 
 1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/SakinaBoulegroun/Multimodal-Model-Interpretability.git
-   cd Multimodal-Model-Interpretability
+```bash
+git clone https://github.com/SakinaBoulegroun/Multimodal-Model-Interpretability.git
+cd Multimodal-Model-Interpretability
+```
    
 2. **Install dependencies**
 Install required Python packages from requirements.txt:
@@ -64,15 +65,14 @@ data/img/
 
 ## Usage
 
-**Data**
-The `sample_data.csv` file has already been generated, is available in `data` folder and contains 500 positive and 500 negative training points due to computational limits.  
-
+- **Data**
+The `sample_data.csv` file has already been generated, is available in `data` folder and contains 500 positive and 500 negative training points due to computational limits. 
 If you want to train your model with more data, modify the scripts so that when loading the data, you do **not** use `training_sample.csv`. Instead, load the full dataset directly from the original JSONL file by using:  
 ```python
 df = pd.read_json(data/"original_train.jsonl", lines=True)
 ```
 
-**Train the models**
+- **Train the models**
 Run the training script to train the classifiers and save the checkpoints in models/checkpoints:
 ```bash
 python scripts/train_model_bimodal.py
@@ -80,26 +80,26 @@ python scripts/train_model_text.py
 python scripts/train_image.py
 ```
 
-**Evaluation**
+- **Evaluation**
 Run the evaluation script to get the metrics. Change the config and the name of the model depending on which modality you are focusing on.
 ```bash
 python scripts/evaluation.py
 ```
 
-**Interpretability Analysis**
+- **Interpretability Analysis**
 
-- **Attention Weights**  
+  - **Attention Weights**  
   Two main functions are used to analyze the attention matrices:  
   1. One function computes the attention matrix averaged over all heads in the last attention layer, separately for image and text modalities. This is done for true positives (TP), true negatives (TN), false positives (FP), and false negatives (FN) to compare attention patterns across these different categories.  
   2. Another function shows the evolution of the attention matrix across layers or time, providing insight into how attention changes as information flows through the model.  
 
   For both attention weights and Grad-CAM, the code includes functionality to plot and save the resulting figures.
 
-- **Grad-CAM**  
+  - **Grad-CAM**  
   Grad-CAM (Gradient-weighted Class Activation Mapping) is a technique to visualize which regions in an image contribute most to the model's decision by using gradients flowing into the last convolutional layers.  
   In this project, Grad-CAM generates a grid of heatmaps overlayed on the input images based on the last attention layer. You can change the layer used for Grad-CAM visualization by modifying the `target_layer` parameter.  
 
-- **Logit Lens**  
+  - **Logit Lens**  
   The logit lens analysis tracks the predicted logits for a chosen token (default is the [CLS] token) across different layers of the model. This shows how the model’s prediction evolves layer by layer, helping to interpret the model’s internal decision-making process.
 
 All generated plots from these analyses are saved in the `interpretability_results/plots/` folder for easy access and review.
