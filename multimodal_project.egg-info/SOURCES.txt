@@ -1,0 +1,13 @@
+setup.py
+models/__init__.py
+models/classifiers.py
+multimodal_project.egg-info/PKG-INFO
+multimodal_project.egg-info/SOURCES.txt
+multimodal_project.egg-info/dependency_links.txt
+multimodal_project.egg-info/top_level.txt
+src/__init__.py
+src/config.py
+src/dataloader.py
+src/evaluate.py
+src/train.py
+src/utils.py
