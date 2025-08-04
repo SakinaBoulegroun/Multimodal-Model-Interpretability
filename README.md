@@ -1,6 +1,10 @@
 # Multimodal Model Interpretability
 
-This project focuses on training and interpreting multimodal classifiers that combine image and text data. It includes training scripts, saved model checkpoints, evaluation, and interpretability tools.
+This project focuses on the interpretability of multimodal models, an area that has seen relatively little work compared to unimodal models. Specifically, we concentrate on concept-based and mechanistic interpretability approaches to better understand how these models make decisions.  
+
+In this work, we implement several interpretability methods adapted for multimodal models—combining text and image inputs—and compare their behavior and insights with those from unimodal models. Our goal is to shed light on the inner workings of multimodal architectures and provide tools for deeper analysis and understanding.
+
+The model is based on OpenAI’s CLIP architecture, with a personalized classifier head added on top. It is trained and fine-tuned for a classification task.
 
 ## Project Structure
 
