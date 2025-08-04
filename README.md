@@ -39,22 +39,27 @@ This project focuses on training and interpreting multimodal classifiers that co
 
 1. **Clone the repository**  
    ```bash
-   git clone <repository_url>
-   cd <repository_folder>
+   git clone https://github.com/SakinaBoulegroun/Multimodal-Model-Interpretability.git
+   cd Multimodal-Model-Interpretability
    
 2. **Install dependencies**
 Install required Python packages from requirements.txt:
 ```bash
-pip install -r requirements.txt```
+pip install -r requirements.txt
+```
 
-3. **Install dependencies**
-**Install the package in editable mode**
+3. **Install the package in editable mode**
 This allows you to import and use the code as modules:
-
-bash
-Copier
-Modifier
+```bash
 pip install -e .
-
+```
+4. **Download and prepare image data**
+The bimodal hateful memes dataset images are not included in this repository due to size constraints.
+Please follow the instructions below to download the images from the provided drive:
+- Download the img folder from the following link drive: https://drive.google.com/drive/folders/1-7rruhu1HUogTxS5DTYxRO4Pt1fkbLZy?usp=sharing
+- Place the downloaded img folder inside the data/ directory so that the path is:
+```bash
+data/img/
+```
 
 
